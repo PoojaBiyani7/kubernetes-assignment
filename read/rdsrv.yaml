@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: biyanisrvrd
+spec:
+  selector:
+    app: read
+  type: LoadBalancer
+  ports:
+    - name: read
+      port: 7790
+      targetPort: 80
+      
+  
+

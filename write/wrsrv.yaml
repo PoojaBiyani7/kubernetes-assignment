@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: poojasrvwr
+spec:
+  selector:
+    app: write
+  type: LoadBalancer
+  ports:
+    - name: write
+      port: 7788
+      targetPort: 80
+      
+  
+

@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: poojadepwr
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: write
+    spec:
+      volumes:
+      - name: pv789
+        persistentVolumeClaim:
+         claimName: pvc789
+      containers:
+      - name: wrcon
+        image: poojabiyani/poojawrite
+        volumeMounts:
+        - name: pv789
+          mountPath: "/var/www/html/fol"
+      

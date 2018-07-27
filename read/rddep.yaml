@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: biyaniread
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: read
+    spec:
+      volumes:
+      - name: pv789
+        persistentVolumeClaim:
+         claimName: pvc789
+      containers:
+      - name: rdcon
+        image: poojabiyani/biyaniread
+        volumeMounts:
+        - name: pv789
+          mountPath: "/var/www/html/fol"
+     
+  
